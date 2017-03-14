@@ -1,4 +1,3 @@
-
 <?php include('header.php'); // Display Header ?>
         
 <?php
@@ -13,6 +12,7 @@ echo '<h3>All Movies</h3>'
 <table>
   <tr>
     <th></th>
+    <th></th>
     <th>Title</th>
     <th>Format</th>
     <th>Length</th>
@@ -25,7 +25,8 @@ echo '<h3>All Movies</h3>'
   while ($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><a href="<?php echo $_SERVER['PHP_SELF']; echo '?id=';  echo $row['id']; ?> ">EDIT</a></td>
+    <td><a href="<?php echo $_SERVER['PHP_SELF']; echo '?id=';  echo $row['id']; ?>">EDIT</a></td>
+    <td><a href="<?php echo $_SERVER['PHP_SELF']; echo '?action=delete&id=';  echo $row['id']; ?>">DELETE</a></td>
     <td><?php echo $row['title']; ?></td>
     <td><?php echo $row['format']; ?></td>
     <td><?php echo $row['length']; ?></td>
@@ -37,6 +38,6 @@ echo '<h3>All Movies</h3>'
 ?>
 </table>
 
-<?php include('addMovie.php'); // Display addMovie page ?>
+<?php include('addEditMovie.php'); // Display addMovie page ?>
 
 <?php // Display Footer ?>

@@ -1,41 +1,11 @@
 <?php
-  include('dbconnect.php');
-  
   $error = false;
-  
-  // this runs only when a user hits "Add Movie"
-  if (isset($_POST['addMovie'])){
-      
-      //assign form inputs
-      $id = $_POST['id'];
-      $title = $_POST['title'];
-      $format = $_POST['format'];
-      $length = $_POST['length'];
-      $releaseYear = $_POST['releaseYear'];
-      $rating = $_POST['rating'];
-      
-  // validate inputs
-  
-  if ( !empty($title) ) {
-      
-      // add movie into database
-      $query = "INSERT INTO movies (title, format, length, releaseYear, rating) 
-                VALUES ('$title', '$format', $length, $releaseYear, $rating)";
-                
-      $result = $db->query($query);
-      //$db->disconnect();
-      $message = "$title has been successfully added.";
-      
-  }
-  
-  else {
-      
-      $error = true; // input validation failed
-      
-  }
-      
-      
-  }
+
+  // Connect to the database
+  include('dbconnect.php');
+
+  // Database call logic
+  include('dbcalls.php');
   
 ?>
 
