@@ -5,7 +5,7 @@
 
 echo '<h2>Simple Movie Collection</h2>';
 echo '<p>';
-echo '<h3>All Movies</h3>'
+echo '<h3><a href="main.php"/>All Movies</a></h3>'
 
 ?>
 
@@ -23,13 +23,16 @@ echo '<h3>All Movies</h3>'
   $query = "SELECT * FROM movies ORDER BY title";
   $result = $db->query($query);
   while ($row = $result->fetch_assoc()) {
+    
+    $hours = floor($row['length'] / 60);
+    $minutes = $row['length'] % 60;
 ?>
   <tr>
-    <td><a href="<?php echo $_SERVER['PHP_SELF']; echo '?id=';  echo $row['id']; ?>">EDIT</a></td>
-    <td><a href="<?php echo $_SERVER['PHP_SELF']; echo '?action=delete&id=';  echo $row['id']; ?>">DELETE</a></td>
+    <td><a href="<?php echo $_SERVER['PHP_SELF']; echo '?action=edit&id=';  echo $row['id']; ?>">edit</a></td>
+    <td><a href="<?php echo $_SERVER['PHP_SELF']; echo '?action=delete&id=';  echo $row['id']; ?>">delete</a></td>
     <td><?php echo $row['title']; ?></td>
     <td><?php echo $row['format']; ?></td>
-    <td><?php echo $row['length']; ?></td>
+    <td><?php echo $hours . " hrs " . $minutes . " min"; ?></td>
     <td><?php echo $row['releaseYear']; ?></td>
     <td><?php echo $row['rating']; ?></td>
   </tr>
