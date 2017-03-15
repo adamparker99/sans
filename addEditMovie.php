@@ -1,16 +1,16 @@
 <?php // *** Add/Edit Movie *** // ?>
 
-<?php 
-    
-
-    if ($getAction=="edit"){
-        echo "<h3>Edit Movie</h3>";
-    }
-    else{
-        echo "<h3>Add a Movie</h3>";
-    }
-?>
-
+<div class="panel-heading">
+    <?php 
+        if ($getAction=="edit"){
+            echo '<h3 class="panel-title">Edit Movie</h3>';
+        }
+        else{
+            echo '<h3 class="panel-title">Add a Movie</h3>';
+        }
+    ?>
+</div>
+<div class="panel-body">
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <input type="hidden" name="id" value="<?php echo $editID; ?>" />
 <p>Title: <input type="text" name="title" value="<?php if ($getAction=="edit"){ echo $editTitle; } ?>"/></p>
@@ -21,7 +21,7 @@
 </select> </p>
 <p>Length: <input type="number" name="length" value="<?php if ($getAction=="edit"){ echo $editLength; } ?>"/></p>
 <p>Release Year: <input type="number" name="releaseYear" value="<?php if ($getAction=="edit"){ echo $editReleaseYear; } ?>"/></p>
-<p>Rating: <input type="radio" name="rating" value="1" <?php if($editRating == "1" && $getAction=="edit"){echo "Checked";} ?>/> 1
+<p>Rating:<br/> <input type="radio" name="rating" value="1" <?php if($editRating == "1" && $getAction=="edit"){echo "Checked";} ?>/> 1
            <input type="radio" name="rating" value="2" <?php if($editRating == "2" && $getAction=="edit"){echo "Checked";} ?>/> 2
            <input type="radio" name="rating" value="3" <?php if($editRating == "3" && $getAction=="edit"){echo "Checked";} ?>/> 3
            <input type="radio" name="rating" value="4" <?php if($editRating == "4" && $getAction=="edit"){echo "Checked";} ?>/> 4           
@@ -38,3 +38,4 @@
 ?>
            
 </form>
+</div>
