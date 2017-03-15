@@ -1,6 +1,7 @@
 <?php include('header.php'); // Display Header ?>
 
 <div class="container">
+
 <br/><br/><br/><br/> 
 <div class="row">
   <div class="col-md-3" bgcolor="#FF0099">
@@ -51,7 +52,4 @@
 
 
 
-
-</div>
-
-<?php // Display Footer ?>
+<?php include('footer.php'); ?>

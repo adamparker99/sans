@@ -14,10 +14,10 @@
 
   // validate inputs
   if (isset($length) && ($length <= 0 || $length >= 500)){
-    echo '<div class="alert alert-warning" role="alert">Error! Length must be greater than 0 and less than 500</div>';
+    echo '<br/><br/><br/><div class="alert alert-warning" role="alert">Error! Length must be greater than 0 and less than 500</div>';
   }
   elseif (isset($releaseYear) && ($releaseYear <= 1800 || $releaseYear >= 2100)){
-    echo '<div class="alert alert-warning" role="alert">Error! Release Year must be greater than 1800 and less than 2100</div>';
+    echo '<br/><br/><br/><div class="alert alert-warning" role="alert">Error! Release Year must be greater than 1800 and less than 2100</div>';
   }
   else {
   
