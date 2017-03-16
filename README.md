@@ -7,10 +7,10 @@ Adam's Movie Manager
 5. The design is fluid and responsive to screen size (i.e. phone, table, laptop, etc)
 6. All items in the list are sortable by all columns. 
 7. There is Google User authentication (OAUTH support).
+8. Logging in through Google enables the edit/delete functions as well as the view trailer function
+9. View Movie Trailer 3rd Party Integration - YouTube API
 
-Created in PHP Laravel
-
-Repository on GitHub
-
-Hosted on AWS C2 server at: http://ec2-34-205-141-130.compute-1.amazonaws.com/home.php
+ - Created in PHP Laravel
+ - Repository on GitHub
+ - Hosted on AWS C2 server at: http://ec2-34-205-141-130.compute-1.amazonaws.com/home.php
  
