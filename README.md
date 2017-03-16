@@ -1,30 +1,14 @@
+Adam's Movie Manager
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+1. This app allows you to created, read, update, delete, and list a movie collection
+2. It uses Bootstrap for css / styles
+3. Home.php is the home/splash page
+4. Main.php is the movie manager app
+5. The design is fluid and responsive to screen size (i.e. phone, table, laptop, etc)
+6. All items in the list are sortable by all columns. 
+7. There is Google User authentication (OAUTH support).
 
-
-Hi there! Welcome to Cloud9 IDE!
-
-To get you started, we have created a small hello world application.
-
-1) Open the hello-world.php file
-
-2) Follow the run instructions in the file's comments
-
-3) If you want to look at the Apache logs, check out ~/lib/apache2/log
-
-And that's all there is to it! Just have fun. Go ahead and edit the code, 
-or add new files. It's all up to you! 
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+Created in PHP Laravel
+Repository on GitHub
+Hosted on AWS C2 server at: http://ec2-34-205-141-130.compute-1.amazonaws.com/home.php
+ 
