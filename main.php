@@ -15,17 +15,22 @@
         <tr>
           <th></th>
           <th></th>
-          <th>Title</th>
-          <th>Format</th>
-          <th>Length</th>
-          <th>Release Year</th>
-          <th>Rating</th>
+          <th><a href="main.php?sort=title">Title</a></th>
+          <th><a href="main.php?sort=format">Format</a></th>
+          <th><a href="main.php?sort=length">Length</a></th>
+          <th><a href="main.php?sort=releaseYear">Release Year</a></th>
+          <th><a href="main.php?sort=rating">Rating</a></th>
         </tr>
       </thead>
       <tbody>
         <?php
         // Get list of movies from database
-        $query = "SELECT * FROM movies ORDER BY title";
+        if (!isset($sortBy)){
+          $query = "SELECT * FROM movies ORDER BY title";
+        }
+        else{
+          $query = "SELECT * FROM movies ORDER BY $sortBy";
+        }
         $result = $db->query($query);
         while ($row = $result->fetch_assoc()) {
             $hours = floor($row['length'] / 60);
@@ -49,7 +54,12 @@
   </div>
 </div>
 
-
-
+<div class="container">
+  <?php if(!$auth->isLoggedIn()): ?>
+      <a class="btn btn-md btn-primary" href="<?php echo $auth->getAuthUrl(); ?>">Sign in with Google</a>
+  <?php else: ?>
+      You are signed in. <a class="btn btn-md btn-primary" href="logout.php">Sign out</a>
+  <?php endif; ?>
+</div>
 
 <?php include('footer.php'); ?>

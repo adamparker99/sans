@@ -3,9 +3,23 @@
 
   // Connect to the database
   include('dbconnect.php');
-
+  
   // Database call logic
   include('dbcalls.php');
+
+  // Initialize Session 
+  require_once 'app/init.php';
+
+  // Google Sign in setup    
+  $db = new DB;
+  $googleClient = new Google_Client;
+  $auth = new GoogleAuth($db, $googleClient);
+
+  if($auth->checkRedirectCode())
+  {
+      header('Location: main.php');
+  }
+
   
 ?>
 

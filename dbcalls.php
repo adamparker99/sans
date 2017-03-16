@@ -10,6 +10,7 @@
     $length = $_POST['length'];
     $releaseYear = $_POST['releaseYear'];
     $rating = $_POST['rating'];
+    $sortBy = $_GET['sort'];
 
 
   // validate inputs
@@ -80,6 +81,5 @@
         $editRating = $editRow['rating'];
     }
   }
-  
   
 ?>
