@@ -9,6 +9,8 @@ Adam's Movie Manager
 7. There is Google User authentication (OAUTH support).
 
 Created in PHP Laravel
+
 Repository on GitHub
+
 Hosted on AWS C2 server at: http://ec2-34-205-141-130.compute-1.amazonaws.com/home.php
  
