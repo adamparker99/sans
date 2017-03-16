@@ -37,9 +37,15 @@
             $minutes = $row['length'] % 60;
         ?>
         <tr>
-          <td><a href="<?php echo $_SERVER['PHP_SELF']; echo '?action=edit&id=';  echo $row['id']; ?>">edit</a></td>
-          <td><a href="<?php echo $_SERVER['PHP_SELF']; echo '?action=delete&id=';  echo $row['id']; ?>">delete</a></td>
-          <td><?php echo $row['title']; ?></td>
+          <?php if(!$auth->isLoggedIn()): ?>
+          		<td></td>
+          		<td></td>
+          		<td><?php echo $row['title']; ?></td>           
+          <?php else: ?>
+          		<td><a href="<?php echo $_SERVER['PHP_SELF']; echo '?action=edit&id=';  echo $row['id']; ?>">edit</a></td>
+          		<td><a href="<?php echo $_SERVER['PHP_SELF']; echo '?action=delete&id=';  echo $row['id']; ?>">delete</a></td>
+          		<td><?php echo $row['title'] . " (<a href='trailer.php?trailer=" . $row['title'] . " trailer'>Trailer</a>)"; ?></td>
+          <?php endif; ?>
           <td><?php echo $row['format']; ?></td>
           <td><?php echo $hours . " hrs " . $minutes . " min"; ?></td>
           <td><?php echo $row['releaseYear']; ?></td>
